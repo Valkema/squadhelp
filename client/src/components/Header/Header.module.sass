@@ -19,6 +19,7 @@
 
     .logo
       align-self: flex-end
+      cursor: pointer
       @media(max-width: 920px)
         display: none
 
@@ -220,12 +221,19 @@
         padding: 0 5px
         margin-left: 0
 
-      span
-        color: #337ab7
-        font-size: 14px
-        margin-left: 10px
-        @media(max-width: 360px)
-          font-size: 12px
+      a
+        text-decoration: none
+
+        span
+          color: #333
+          font-size: 14px
+          margin-left: 10px
+          @media(max-width: 360px)
+            font-size: 12px
+
+          &:hover
+            color: #337ab7
+      
 
   .fixedHeader
     z-index: 500
