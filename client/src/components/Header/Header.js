@@ -83,7 +83,7 @@ class Header extends React.Component {
         <div className={styles.headerContainer}>
           <div className={styles.fixedHeader}>
             <span className={styles.info}>Squadhelp recognized as one of the Most Innovative Companies by Inc Magazine.</span>
-            <a href="http://www.google.com" target="blank">Read Announcement</a>
+            <a href="http://www.google.com" target="_blank">Read Announcement</a>
           </div>
           <div className={styles.loginSignnUpHeaders}>
             <div className={styles.numberContainer}>
