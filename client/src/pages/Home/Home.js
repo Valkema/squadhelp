@@ -190,6 +190,14 @@ const Home = (props) => {
                 <img src={`${CONSTANTS.STATIC_IMAGES_PATH}gif/3-compressed.gif`} alt="compressed" />
               </div>
             </div>
+            <div className={styles.startContestContainer}>
+              <span>Ready to get started? Launch a contest and start receiving submissions instantly.
+              </span>
+              <Link to="#">
+              <i className="far fa-lightbulb"/>
+              <span>Start a Contest</span>
+              </Link>
+            </div>
             <div className={styles.headerBar}>
               <h3>Names For Sale</h3>
               <p className={styles.blueUnderline}>
