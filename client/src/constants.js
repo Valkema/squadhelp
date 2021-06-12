@@ -4,6 +4,9 @@ const serverPort = 3000;
 export default {
   CUSTOMER: 'customer',
   CREATOR: 'creator',
+  CONTACT_US: {
+    PHONE:"(877) 355-3585",
+  },
   CONTEST_STATUS_ACTIVE: 'active',
   CONTEST_STATUS_FINISHED: 'finished',
   CONTEST_STATUS_PENDING: 'pending',
