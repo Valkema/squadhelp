@@ -193,7 +193,7 @@ const Home = (props) => {
             <div className={styles.startContestContainer}>
               <span>Ready to get started? Launch a contest and start receiving submissions instantly.
               </span>
-              <Link to="#">
+              <Link to="/start-contest">
               <i className="far fa-lightbulb"/>
               <span>Start a Contest</span>
               </Link>

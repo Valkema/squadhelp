@@ -14,8 +14,7 @@ import {
 } from '../../actions/actionCreator';
 import CONSTANTS from '../../constants';
 import styles from './OfferBox.module.sass';
-import 'react-confirm-alert/src/react-confirm-alert.css';
-import './confirmStyle.css';
+
 
 const OfferBox = (props) => {
   const findConversationInfo = () => {
