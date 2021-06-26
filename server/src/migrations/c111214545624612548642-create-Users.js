@@ -1,3 +1,7 @@
+const {
+  permissions: { roles },
+} = require('../config/app');
+
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
@@ -35,7 +39,7 @@ module.exports = {
         defaultValue: 'anon.png',
       },
       role: {
-        type: Sequelize.ENUM('customer', 'creator'),
+        type: Sequelize.STRING,
         allowNull: false,
       },
       balance: {
