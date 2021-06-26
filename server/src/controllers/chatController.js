@@ -1,14 +1,14 @@
 const Conversation = require('../models/mongoModels/conversation');
 const Message = require('../models/mongoModels/Message');
 const Catalog = require('../models/mongoModels/Catalog');
-const moment = require('moment');
-const db = require('../models');
+//const moment = require('moment');
+const { Users } = require('../models');
 const userQueries = require('./queries/userQueries');
 const controller = require('../socketInit');
 const _ = require('lodash');
 
 module.exports.addMessage = async (req, res, next) => {
-  const participants = [req.tokenData.userId, req.body.recipient];
+  const participants = [req.tokenData.userId, req.Usersody.recipient];
   participants.sort(
     (participant1, participant2) => participant1 - participant2);
   try {
@@ -155,7 +155,7 @@ module.exports.getPreview = async (req, res, next) => {
       interlocutors.push(conversation.participants.find(
         (participant) => participant !== req.tokenData.userId));
     });
-    const senders = await db.Users.findAll({
+    const senders = await Users.findAll({
       where: {
         id: interlocutors,
       },
