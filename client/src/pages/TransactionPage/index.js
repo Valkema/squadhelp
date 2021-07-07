@@ -5,33 +5,7 @@ import Header from '../../components/Header';
 import CONSTANTS from '../../constants';
 import { Link } from 'react-router-dom';
 import styles from './TransactionPage.sass';
-const data = [
-  {
-    id: 1,
-    type: CONSTANTS.INCOME,
-    sum: 350,
-  },
-  {
-    id: 2,
-    type: CONSTANTS.EXPENSE,
-    sum: 350,
-  },
-  {
-    id: 3,
-    type: CONSTANTS.INCOME,
-    sum: 400,
-  },
-  {
-    id: 4,
-    type: CONSTANTS.INCOME,
-    sum: 550,
-  },
-  {
-    id: 2,
-    type: CONSTANTS.EXPENSE,
-    sum: 600,
-  },
-];
+
 const TransactionPage = (props) => {
   return (
     <>
@@ -44,5 +18,7 @@ const TransactionPage = (props) => {
   );
 };
 
-TransactionPage.propTypes = {};
+TransactionPage.propTypes = {
+  
+};
 export default TransactionPage;

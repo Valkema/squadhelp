@@ -54,6 +54,9 @@ const Home = (props) => {
                 carouselType={carouselConstants.MAIN_SLIDER}
               />
             </div>
+        /* !!!!!!!*/
+            <div>Link with btn to How-to!!!!!!!!!!!!!</div>
+
             <div className={styles.container__description}>
               <h2 className={styles.blueUnderline}>Why Squadhelp?</h2>
               <div className={styles.cardContainer}>
