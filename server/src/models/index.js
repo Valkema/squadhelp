@@ -68,11 +68,13 @@ Object.keys(db).forEach((modelName) => {
 // db['Offers'].hasOne(db['Ratings'], { foreignKey: 'offerId', targetKey: 'id' });
 
 // дописать
+/*
 db['Ratings'].belongsTo(db['Users'], { foreignKey: 'userId', targetKey: 'id' });
 db['Ratings'].belongsTo(db['Offers'], {
   foreignKey: 'offerId',
   targetKey: 'id',
 });
+*/
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;

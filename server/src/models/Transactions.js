@@ -1,5 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
-    const Transactions = sequelize.define('Transactions', {
+  const Transactions = sequelize.define(
+    'Transactions',
+    {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -18,11 +20,15 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.DECIMAL,
         allowNull: false,
       },
+    },
+    {
+      timestamps: true,
+    },
+  );
+  Transactions.associate = function (models) {
+    Transactions.belongsTo(models.User, {
+      foreignKey: 'userId',
     });
-    Transactions.associate = function (models) {
-      Transactions.belongsTo(models.Users, {
-        foreignKey: 'userId',
-      });
-    };
-    return Transactions;
+  };
+  return Transactions;
 };

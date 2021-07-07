@@ -24,6 +24,19 @@ module.exports = {
         sum: {
           type: Sequelize.DECIMAL,
           allowNull: false,
+          validate: {
+            min: 0,
+          },
+        },
+        createdAt: {
+          allowNull: false,
+          type: Sequelize.DATE,
+          defaultValue: Sequelize.NOW,
+        },
+        updatedAt: {
+          allowNull: false,
+          type: Sequelize.DATE,
+          defaultValue: Sequelize.NOW,
         },
       })
       .then(() =>
@@ -34,10 +47,10 @@ module.exports = {
               [Sequelize.Op.gte]: 0,
             },
           },
-        })
+        }),
       );
   },
   down: (queryInterface, Sequelize) => {
     return queryInterface.dropTable('Transactions');
   },
-};
+}
