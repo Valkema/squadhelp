@@ -28,7 +28,7 @@ export const authRequest = () => ({
 export const authRequestSuccess = (values) => ({
   type: AUTH_ACTION_TYPES.AUTH_REQUEST_SUCCESS,
   payload: {
-    data,
+    values,
   },
 });
 

@@ -11,6 +11,7 @@ const router = express.Router();
 const contestRouter = require('./contestRouter');
 const authRouter = require('./authRouter');
 
+
 router.use('/auth', authRouter);
 
 router.post(

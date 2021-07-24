@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import './App.css';
 import { ToastContainer } from 'react-toastify';
 import LoginPage from './pages/LoginPage/LoginPage';
 import RegistrationPage from './pages/RegistrationPage/RegistrationPage';
 import Payment from './pages/Payment/Payment';
 import StartContestPage from './pages/StartContestPage/StartContestPage';
 import Dashboard from './pages/Dashboard/Dashboard';
+import HowItWorks from './pages/HowItWorks/HowItWorks';
 import PrivateHoc from './components/PrivateHoc/PrivateHoc';
 import NotFound from './components/NotFound/NotFound';
 import Home from './pages/Home/Home';
@@ -36,6 +36,7 @@ class App extends Component {
         />
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/how-it-works" component={HowItWorks} />
           <Route exact path="/login" component={OnlyNotAuthorizedUserHoc(LoginPage)} />
           <Route exact path="/registration" component={OnlyNotAuthorizedUserHoc(RegistrationPage)} />
           <Route exact path="/payment" component={PrivateHoc(Payment)} />
