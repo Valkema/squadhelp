@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
 import styles from './Header.module.sass';
 import CONSTANTS from '../../constants';
-import { getUserAction, clearUserStore, headerRequest } from '../../actions/actionCreator';
+import { clearUserStore, headerRequest } from '../../actions/actionCreator';
 import Logo from '../../components/Logo';
 
 class Header extends React.Component {
@@ -84,7 +84,7 @@ class Header extends React.Component {
         <div className={styles.headerContainer}>
           <div className={styles.fixedHeader}>
             <span className={styles.info}>Squadhelp recognized as one of the Most Innovative Companies by Inc Magazine.</span>
-            <a href="http://www.google.com" target="_blank">Read Announcement</a>
+            <a href="http://www.google.com" target="_blank" rel="noreferrer">Read Announcement</a>
           </div>
           <div className={styles.loginSignnUpHeaders}>
             <div className={styles.numberContainer}>

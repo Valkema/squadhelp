@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CONSTANTS from '../../constants.js';
 
 const TransactionTable = (props) => {
   const { data } = props;
