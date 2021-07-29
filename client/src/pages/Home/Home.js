@@ -54,7 +54,9 @@ const Home = (props) => {
               />
             </div>
 
-            <div>Link with btn to How-to!!!!!!!!!!!!!</div>
+            <div className={styles.button}>
+              <Link className={styles.button__link} to="/how-it-works">Learn How Squadhelp Works</Link>
+              </div>
 
             <div className={styles.container__description}>
               <h2 className={styles.blueUnderline}>Why Squadhelp?</h2>
@@ -74,7 +76,7 @@ const Home = (props) => {
                     src={`${CONSTANTS.STATIC_IMAGES_PATH}more-benifits-high-quality-icon.png`}
                     alt="desktop"
                   />
-                  <h3>High Quality & Collaboration</h3>
+                  <h3>High Quality &#38; Collaboration</h3>
                   <p>
                     Using an advanced Quality Scoring Algorithm and Machine Learning,
                     we ensure that you receive more ideas from our top-quality creatives,
@@ -175,7 +177,7 @@ const Home = (props) => {
             <div className={styles.greyContainer}>
               <div className={styles.stepReverse}>
                 <div>
-                  <h3>Step 3: Rate Entries & Brainstorm with Creatives</h3>
+                  <h3>Step 3: Rate Entries &#38; Brainstorm with Creatives</h3>
                   <p>
                     <i className="fas fa-check" />
                     <span>Provide instant feedback on Names</span>
