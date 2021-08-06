@@ -1,4 +1,14 @@
-$blueColor: #28D2D1
+$primaryClr: #fff
+$secondaryClr: #FAFAFA
+$thirdClr:  #2B62EC
+$primaryAccentClr: #28D2D0
+$secondaryAccentClr: #455A89
+$statsClr: #808080
+$listAccentClr: #008000
+$startContestClr: #1e2022
+$mainFontFamily: Raleway, sans-serif
+$btnFontFamily: 'Lato', sans-serif
+$startContestContFontFamily: 'Poppins', Helvetica, Arial, sans-serif
 
 @mixin stepCard
   display: flex
@@ -7,7 +17,7 @@ $blueColor: #28D2D1
   align-items: flex-start
   margin: 90px 0 30px 0
   max-width: 540px
-  font-family: Raleway, sans-serif
+  font-family: $mainFontFamily
   h3
     text-align: center
     margin-bottom: 20px
@@ -23,7 +33,7 @@ $blueColor: #28D2D1
 
     i
       align-self: flex-start
-      color: green
+      color: $listAccentClr
       margin: 5px 10px 0 0
 
   span
@@ -33,15 +43,76 @@ $blueColor: #28D2D1
     margin: 90px 0 30px 0
     padding: 0 80px
 
+@mixin innerContainer
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  width: 100%
+  padding: 40px 0 30px 0
+
+@mixin underline
+  position: relative
+  &:after
+    position: absolute
+    content: ''
+    height: 3px
+    bottom: -30px
+    margin: 0 auto
+    left: 0
+    right: 0
+    width: 100px
+
+@keyframes cd-pulse
+  0%
+    width: 0
+  100%
+    width: 100%
+
+.stepReverse
+  display: flex
+  flex-direction: row
+  justify-content: space-around
+  align-items: flex-start
+  padding: 40px 0
+
+  div
+    @include stepCard
+
+  @media screen and (max-width: 950px)
+    padding: 0
+    display: flex
+    flex-direction: column-reverse
+    justify-content: flex-start
+    align-items: center
+
+  img
+    width: 100%
+
+  div
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: flex-start
+    margin: 90px 0 30px 0
+    padding: 0 80px
+    width: 100%
+    @media (max-width: 720px)
+      padding: 0
+
+  @media screen and (max-width: 414px)
+    padding: 0
+
 .container
   display: flex
   flex-direction: column
-  justify-content: flex-start
+  justify-content: center
   align-items: center
+  overflow-x: hidden
 
   h2
     text-align: center
-    font-family: Raleway, sans-serif
+    font-family: $mainFontFamily
     margin: 30px 0
     font-size: 30px
     font-weight: 500
@@ -57,11 +128,14 @@ $blueColor: #28D2D1
       flex-direction: row
       justify-content: flex-start
       align-items: flex-start
+      @media (max-width: 1024px)
+        padding: 0 20px
       @media (max-width: 720px)
         display: flex
         flex-direction: column
         justify-content: flex-start
         align-items: center
+        padding: 0 10px
 
     .card
       display: flex
@@ -70,7 +144,7 @@ $blueColor: #28D2D1
       align-items: flex-start
       max-width: 300px
       margin: 40px 40px 40px 0
-      font-family: Raleway, sans-serif
+      font-family: $mainFontFamily
 
       h3
         margin-top: 20px
@@ -89,13 +163,17 @@ $blueColor: #28D2D1
       &:last-child
         margin-right: 0
 
+      @media (max-width: 1024px)
+        margin: 30px
+        
       @media screen and (max-width: 768px)
         max-width: 100%
-        margin: 40px
+        margin: 20px
 
       @media screen and (max-width: 414px)
         p
           margin-right: 10px
+
 
   .adv
     display: flex
@@ -139,6 +217,17 @@ $blueColor: #28D2D1
           max-width: 70px
           margin: 0 30px
 
+      @media screen and (max-width: 374px)
+        img
+          max-height: 20px
+          max-width: 60px
+          margin: 0 20px
+
+        &:hover
+          max-height: 20px
+          max-width: 60px
+          margin: 0 20px
+
   .stats
     display: flex
     flex-direction: row
@@ -151,18 +240,18 @@ $blueColor: #28D2D1
       justify-content: center
       align-items: center
       padding: 10px 20px
-      border-right: 1px solid grey
+      border-right: 1px solid $statsClr
       @media (max-width: 580px)
         padding: 10px 5px
 
       p
-        font-family: Lato, sans-serif
+        font-family: $btnFontFamily
         margin-right: 10px
         font-size: 20px
         font-weight: 600
 
       span
-        font-family: Raleway, sans-serif
+        font-family: $mainFontFamily
         font-size: 18px
         font-weight: 400
 
@@ -200,77 +289,23 @@ $blueColor: #28D2D1
 
 .greenStep
   @include stepCard
-  color: white
-
-@mixin underline
-  position: relative
-  &:after
-    position: absolute
-    content: ''
-    height: 3px
-    bottom: -30px
-    margin: 0 auto
-    left: 0
-    right: 0
-    width: 100px
+  color: $primaryClr
 
 .blueUnderline
   @include underline
 
   &:after
-    background: #455A89
+    background: $secondaryAccentClr
 
 .whiteUnderline
   @include underline
 
   &:after
-    background: white
-
-@mixin innerContainer
-  display: flex
-  flex-direction: column
-  justify-content: center
-  align-items: center
-  width: 100%
-  padding: 40px 0 30px 0
-
-.stepReverse
-  display: flex
-  flex-direction: row
-  justify-content: space-around
-  align-items: flex-start
-  padding: 40px 0
-
-  div
-    @include stepCard
-
-  @media screen and (max-width: 950px)
-    padding: 0
-    display: flex
-    flex-direction: column-reverse
-    justify-content: flex-start
-    align-items: center
-
-  img
-    width: 100%
-
-  div
-    display: flex
-    flex-direction: column
-    justify-content: flex-start
-    align-items: flex-start
-    margin: 90px 0 30px 0
-    padding: 0 80px
-    width: 100%
-    @media (max-width: 720px)
-      padding: 0
-
-  @media screen and (max-width: 414px)
-    padding: 0
+    background: $primaryClr
 
 .greyContainer
   @include innerContainer
-  background-color: #FAFAFA
+  background-color: $secondaryClr
 
 .startContestContainer
   display: flex
@@ -278,15 +313,14 @@ $blueColor: #28D2D1
   justify-content: space-between
   background-image: linear-gradient(30deg,rgba(25,160,255,0.85) 0%,rgba(45,21,130,0.9) 100%)
   max-width: 1100px
-  width: 90vw
+  width: 90%
   padding: 1.5rem
-  font-family: "Poppins", Helvetica, Arial, sans-serif
-  font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace
+  font-family: $startContestContFontFamily
   font-size: 16px
-  color: #1e2022
+  color: $startContestClr
 
   >span
-    color: #fff
+    color: $primaryClr
     padding: 0 15px
 
   a
@@ -294,11 +328,11 @@ $blueColor: #28D2D1
     min-width: 9.6875rem
     text-align: center
     margin-left: auto
-    background-color: #fff
+    background-color: $primaryClr
     cursor: pointer
     padding: 12px 16px
     transition: all 0.2s ease-in-out
-    color: #1e2022
+    color: $startContestClr
 
     &:hover
       transform: translateY(-3px)
@@ -318,7 +352,7 @@ $blueColor: #28D2D1
 
 .whiteContainer
   @include innerContainer
-  background-color: white
+  background-color: $primaryClr 
 
   flex-direction: column
   span
@@ -329,12 +363,12 @@ $blueColor: #28D2D1
 
 .greenContainer
   @include innerContainer
-  background-color: #28D2D0
+  background-color: $primaryAccentClr
 
 .blueContainer
   @include innerContainer
-  background-color: #2B62EC
-  color: white
+  background-color: $thirdClr
+  color: $primaryClr
 
   h2
     margin-bottom: 40px
@@ -349,12 +383,12 @@ $blueColor: #28D2D1
 
   h3
     margin-bottom: 20px
-    font-family: Raleway, sans-serif
+    font-family: $mainFontFamily
     font-size: 30px
     font-weight: 500
 
   p
-    font-family: Raleway, sans-serif
+    font-family: $mainFontFamily
     margin-bottom: 30px
     padding: 0 15px
     text-align: center
@@ -365,7 +399,7 @@ $blueColor: #28D2D1
 .headline
   margin: 20px 0
   text-align: center
-  font-family: Raleway, sans-serif
+  font-family: $mainFontFamily
 
   span:first-child
     line-height: 39px
@@ -392,22 +426,16 @@ $blueColor: #28D2D1
       bottom: 0
       height: 3px
       width: 0
-      background: #28d2d0
+      background: $primaryAccentClr
       animation: cd-pulse 3s infinite
-
-@keyframes cd-pulse
-  0%
-    width: 0
-  100%
-    width: 100%
 
 .button
   display: flex
   flex-direction: row
   justify-content: center
   align-items: center
-  color: $blueColor
-  border: 2px solid $blueColor
+  color: $primaryAccentClr
+  border: 2px solid $primaryAccentClr
   border-radius: 5px
   height: 60px
   cursor: pointer
@@ -416,6 +444,17 @@ $blueColor: #28D2D1
   width: 300px
   margin: 40px 0
   transition: all 0.3s linear
+  @media screen and (max-width: 768px)
+   min-width: 250px
+   width: 250px
+   margin: 30px 0
+  @media screen and (max-width: 414px)
+   min-width: 200px
+   width: 200px
+   margin: 20px 0
+  @media screen and (max-width: 319px)
+   min-width: 150px
+   width: 150px
 
   &__link
     display: flex
@@ -423,16 +462,19 @@ $blueColor: #28D2D1
     justify-content: center
     align-items: center
     color: inherit
-    font-family: 'Lato', sans-serif
+    font-family: $btnFontFamily
     font-size: 14px
     font-weight: 500
     height: 100%
     flex: 1
+    @media screen and (max-width: 414px)
+     font-size: 12px
+     text-align: center
 
     &:hover
       color: inherit
       text-decoration: none
 
   &:hover
-    color: white
-    background-color: $blueColor
+    color: $primaryClr
+    background-color: $primaryAccentClr

@@ -1,3 +1,4 @@
+$mainFontFamily: 'Poppins',Helvetica,Arial,sans-serif
 
 .headerContainer
   display: flex
@@ -5,7 +6,7 @@
   justify-content: space-between
   align-items: center
   width: 100%
-  font-family: "Poppins",Helvetica,Arial,sans-serif
+  font-family: $mainFontFamily
   font-size: 2rem
   font-weight: 400
   line-height: 2
@@ -256,14 +257,14 @@
     align-items: center
     width: 100%
     position: fixed
-    background-color: rgb(69, 90, 137)
-    border-bottom: 3px solid rgb(255, 255, 255)
+    background-color: #455a89
+    border-bottom: 3px solid #fff
     height: 30px
 
     .info
       font-size: 8pt
       letter-spacing: 0.3px
-      color: white
+      color: #fff
       margin-right: 4px
       @media(max-width: 600px)
         display: none
@@ -271,6 +272,9 @@
     a
       font-size: 8pt
       letter-spacing: 0.3px
-      color: lightyellow
-      text-decoration: underline
+      color: #ffffe0
+      text-decoration: none
+
+      &:hover
+       text-decoration: underline
 

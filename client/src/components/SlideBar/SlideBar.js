@@ -9,7 +9,7 @@ const SliderBar = (props) => {
     draggable: true,
     wrapAround: true,
     pageDots: false,
-    prevNextButtons: true,
+    prevNextButtons: false,
     autoPlay: true,
     groupCells: true,
     lazyLoad: true,
@@ -24,6 +24,7 @@ const SliderBar = (props) => {
         return style.exampleCarousel;
       case carouselConstants.FEEDBACK_SLIDER:
         return style.feedbackCarousel;
+      default:
     }
   };
 
@@ -46,7 +47,6 @@ const SliderBar = (props) => {
             <img src={props.images[key]} alt="slide" />
             <p>{carouselConstants.EXAMPLE_SLIDER_TEXT[index]}</p>
           </div>
-
         ));
       }
       case carouselConstants.FEEDBACK_SLIDER: {
@@ -58,17 +58,17 @@ const SliderBar = (props) => {
           </div>
         ));
       }
+      default:
     }
   };
+
   return (
     <Flickity
       className={getStyleName()}
       elementType="div"
       options={options}
     >
-      {
-                renderSlides()
-            }
+      {renderSlides()}
     </Flickity>
   );
 };
