@@ -28,10 +28,10 @@
           "_id"
         ]
       }
-    ]
+    ],
   },
   "env": {
     "jest": true,
     "browser": true
-  }
+  },
 }

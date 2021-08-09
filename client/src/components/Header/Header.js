@@ -5,6 +5,7 @@ import styles from './Header.module.sass';
 import CONSTANTS from '../../constants';
 import { clearUserStore, headerRequest } from '../../actions/actionCreator';
 import Logo from '../../components/Logo/Logo';
+import NavMenu from '../../components/NavMenu/NavMenu';
 
 class Header extends React.Component {
   componentDidMount() {
@@ -80,13 +81,14 @@ class Header extends React.Component {
       );
     };
 
+
     render() {
       if (this.props.isFetching) {
         return null;
       }
       return (
         <div className={styles.headerContainer}>
-          <div className={styles.fixedHeader}>
+          <div className={styles.announcementHeader}>
             <span className={styles.info}>Squadhelp recognized as one of the Most Innovative Companies by Inc Magazine.</span>
             <a href="http://www.google.com" target="_blank" rel="noreferrer">Read Announcement</a>
           </div>
@@ -104,91 +106,7 @@ class Header extends React.Component {
           <div className={styles.navContainer}>
             <Logo className={styles.logo}/>
               <div className={styles.menuNav}>
-              <div className={styles.nav}>
-                <ul>
-                  <li>
-                    <span>Name Ideas</span>
-                    <img
-                      src={`${CONSTANTS.STATIC_IMAGES_PATH}menu-down.png`}
-                      alt="menu"
-                    />
-                    <ul>
-                      <li><a href="http://www.google.com">Beauty</a></li>
-                      <li><a href="http://www.google.com">Consulting</a></li>
-                      <li><a href="http://www.google.com">E-Commerce</a></li>
-                      <li><a href="http://www.google.com">Fashion &#38; Clothing</a></li>
-                      <li><a href="http://www.google.com">Finance</a></li>
-                      <li><a href="http://www.google.com">Real Estate</a></li>
-                      <li><a href="http://www.google.com">Tech</a></li>
-                      <li className={styles.last}>
-                        <a href="http://www.google.com">More Categories</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <span>Contests</span>
-                    <img
-                      src={`${CONSTANTS.STATIC_IMAGES_PATH}menu-down.png`}
-                      alt="menu"
-                    />
-                    <ul>
-                      <li><a href="/how-it-works">How It works</a></li>
-                      <li><a href="http://www.google.com">Pricing</a></li>
-                      <li><a href="http://www.google.com">Agence Service</a></li>
-                      <li><a href="http://www.google.com">Active Contests</a></li>
-                      <li><a href="http://www.google.com">Winners</a></li>
-                      <li><a href="http://www.google.com">LeaderBoard</a></li>
-                      <li className={styles.last}>
-                        <a href="http://www.google.com">Become a Creative</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <span>Our Work</span>
-                    <img
-                      src={`${CONSTANTS.STATIC_IMAGES_PATH}menu-down.png`}
-                      alt="menu"
-                    />
-                    <ul>
-                      <li><a href="http://www.google.com">Names</a></li>
-                      <li><a href="http://www.google.com">Taglines</a></li>
-                      <li><a href="http://www.google.com">Logos</a></li>
-                      <li className={styles.last}>
-                        <a href="http://www.google.com">Testimonials</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <span>Names For Sale</span>
-                    <img src={`${CONSTANTS.STATIC_IMAGES_PATH}menu-down.png`} alt="menu" />
-                    <ul>
-                      <li><a href="http://www.google.com">Popular Names</a></li>
-                      <li><a href="http://www.google.com">Short Names</a></li>
-                      <li><a href="http://www.google.com">Intriguing Names</a></li>
-                      <li><a href="http://www.google.com">Names By Category</a></li>
-                      <li><a href="http://www.google.com">Visual Name Search</a></li>
-                      <li className={styles.last}>
-                        <a href="http://www.google.com">Sell Your Domains</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <span>Blog</span>
-                    <img
-                      src={`${CONSTANTS.STATIC_IMAGES_PATH}menu-down.png`}
-                      alt="menu"
-                    />
-                    <ul>
-                      <li><a href="http://www.google.com">Ultimate Naming Guide</a></li>
-                      <li><a href="http://www.google.com">Poetic Devices In Business Naming</a></li>
-                      <li><a href="http://www.google.com">Crowded Bar Theory</a></li>
-                      <li className={styles.last}>
-                        <a href="http://www.google.com">All Articles</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
+              <NavMenu />
               {this.props.data && this.props.data.role !== CONSTANTS.CREATOR
                         && <div className={styles.startContestBtn} onClick={this.startContests}>Starts Contests</div>}
             </div>

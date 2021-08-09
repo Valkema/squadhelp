@@ -1,4 +1,15 @@
 $mainFontFamily: 'Poppins',Helvetica,Arial,sans-serif
+$primaryColor: #fff
+$primaryTextColor: #555C6B
+$secondaryColor: #28d2d0
+$mainBorderColor: #ebebeb
+$navBgColor: #f9fafb
+$navTextColor: #333
+$navMenuColor: #77838f
+$navAccentColor: #377dff
+$loginTextColor: #718888
+$announceBgColor: #455a89
+$announceLinkColor: #ffffe0
 
 .headerContainer
   display: flex
@@ -10,7 +21,7 @@ $mainFontFamily: 'Poppins',Helvetica,Arial,sans-serif
   font-size: 2rem
   font-weight: 400
   line-height: 2
-  color: #555C6B
+  color: $primaryTextColor
   box-shadow: 0 3px 14px rgba(84,89,101,.13)
 
     
@@ -20,7 +31,7 @@ $mainFontFamily: 'Poppins',Helvetica,Arial,sans-serif
     flex-direction: row
     align-items: center
     justify-content: space-around
-    border-bottom: 1px solid #ebebeb
+    border-bottom: 1px solid $mainBorderColor
 
     @media(max-width: 920px)
       justify-content: center
@@ -37,16 +48,16 @@ $mainFontFamily: 'Poppins',Helvetica,Arial,sans-serif
       text-align: center
       max-width: 340px
       padding: 10px 22px
-      border: 2px solid #28d2d0
-      color: #28d2d0
+      border: 2px solid $secondaryColor
+      color: $secondaryColor
       border-radius: 5px
       font-size: 14px
       font-weight: 400
       margin-bottom: 10px
 
       &:hover
-        color: white
-        background-color: #28d2d0
+        color: $primaryColor
+        background-color: $secondaryColor
 
     .menuNav
       display: flex
@@ -55,89 +66,6 @@ $mainFontFamily: 'Poppins',Helvetica,Arial,sans-serif
         align-items: center
         flex-direction: column
 
-      .nav
-        display: flex
-
-        ul
-          margin: 0
-          list-style: none
-          display: flex
-          justify-content: flex-start
-          align-items: center
-          @media(max-width: 920px)
-            padding: 0
-          @media(max-width: 700px)
-            flex-direction: column
-            align-items: flex-start
-
-          &:last-child li
-            ul
-              width: 200px
-
-          li
-            display: flex
-            align-items: center
-            justify-content: flex-start
-            margin-right: 30px
-            @media(max-width: 700px)
-              width: 100%
-              padding: 0 15px
-
-            ul
-              padding: 0
-              margin: 0
-              width: 160px
-              cursor: pointer
-              display: none
-
-              .last
-                width: 100%
-                padding-top: 8px
-                box-sizing: border-box
-                border-top: 1px solid aquamarine
-
-              li
-                box-sizing: border-box
-                width: 100%
-                padding: 10px 15px
-                display: flex
-                justify-content: flex-start
-
-                &:hover
-                  background: #f9fafb
-
-                a
-                  font-size: 12px
-                  text-decoration: none
-                  color: #333
-                  transition: all 0.1s ease-out
-
-                  &:hover
-                    color: #377dff
-                    cursor: pointer
-
-            &:hover
-              span
-                color: #377dff
-                cursor: pointer
-
-              ul
-                display: block
-                position: absolute
-                z-index: 1000
-                top: 145px
-                background-color: white
-                border-top: 2px solid #377dff
-                @media(max-width: 700px)
-                  top: auto
-                  left: 145px
-
-
-            span
-              color: #77838f
-              font-size: 15px
-              font-weight: 300
-              padding: 15px 0
 
   .loginSignUpHeaders
     margin-top: 30px
@@ -181,7 +109,7 @@ $mainFontFamily: 'Poppins',Helvetica,Arial,sans-serif
           z-index: 500
           padding: 5px 0
           list-style: none
-          background: white
+          background: $primaryColor
           width: 180px
           display: none
 
@@ -189,15 +117,15 @@ $mainFontFamily: 'Poppins',Helvetica,Arial,sans-serif
             text-align: left
 
             &:hover
-              background: #f9fafb
+              background: $navBgColor
 
             span
               display: inline-block
               padding: 5px 15px
-              color: #333
+              color: $navTextColor
               font-size: 16px
               &:hover
-                color: #377dff
+                color: $navAccentColor
 
         img
           width: 20px
@@ -207,7 +135,7 @@ $mainFontFamily: 'Poppins',Helvetica,Arial,sans-serif
         span
           padding: 0
           margin-left: 5px
-          color: #718888
+          color: $loginTextColor
           font-weight: 400
           font-size: 16px
           border: none
@@ -217,11 +145,11 @@ $mainFontFamily: 'Poppins',Helvetica,Arial,sans-serif
 
       .btn
         padding: 0 15px
-        color: #718888
+        color: $loginTextColor
         font-weight: 400
         font-size: 16px
         &:hover
-          color: #377dff
+          color: $navAccentColor
 
     .telContainer
       text-decoration: none
@@ -242,37 +170,37 @@ $mainFontFamily: 'Poppins',Helvetica,Arial,sans-serif
 
         span
           padding: 0 5px
-          color: #555c68
+          color: $primaryTextColor
           font-size: 14px
           @media(max-width: 360px)
             font-size: 12px
 
           &:hover
-           color: #377dff
+           color: $navAccentColor
       
-  .fixedHeader
+  .announcementHeader
     z-index: 500
     display: flex
     justify-content: center
     align-items: center
     width: 100%
     position: fixed
-    background-color: #455a89
-    border-bottom: 3px solid #fff
+    background-color: $announceBgColor
+    border-bottom: 3px solid $primaryColor
     height: 30px
 
     .info
-      font-size: 8pt
+      font-size: 10px
       letter-spacing: 0.3px
-      color: #fff
+      color: $primaryColor
       margin-right: 4px
       @media(max-width: 600px)
         display: none
 
     a
-      font-size: 8pt
+      font-size: 10px
       letter-spacing: 0.3px
-      color: #ffffe0
+      color: $announceLinkColor
       text-decoration: none
 
       &:hover

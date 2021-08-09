@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 const env = process.env.NODE_ENV || 'development';
 const serverIP = 'localhost';
 const serverPort = 3000;
@@ -45,10 +46,66 @@ export default {
     'a Product',
     'a Startup',
   ],
-  FooterItems: [
+  NAV_ITEMS: [
     {
-      title: 'SQUADHELP',
-      items: [
+      TITLE: 'Name Ideas',
+      ITEMS: [
+        'Beauty',
+        'Consulting',
+        'E-Commerce',
+        'Fashion & Clothing',
+       'Finance',
+        'Real Estate',
+        'Tech',
+        'More Categories',
+    ],
+  },
+   {
+      TITLE: 'Contests',
+      ITEMS: [
+        'How It works',
+        'Pricing',
+        'Agence Service',
+        'Active Contests',
+        'Winners',
+        'LeaderBoard',
+        'Become a Creative',
+    ],
+  },
+    {
+      TITLE: 'Our Work',
+       ITEMS: [
+        'Names',
+        'Taglines',
+        'Logos',
+        'Testimonials',
+  ],
+},
+    {
+      TITLE: 'Names For Sale',
+      ITEMS: [
+        'Popular Names',
+        'Short Names',
+        'Intriguing Names',
+        'Names By Category',
+        'Visual Name Search',
+        'Sell Your Domains',
+    ],
+    },
+    {
+      TITLE: 'Blog',
+      ITEMS: [
+        'Ultimate Naming Guide',
+        'Poetic Devices In Business Naming',
+        'Crowded Bar Theory',
+        'All Articles',
+    ],
+  },
+  ],
+  FOOTER_ITEMS: [
+    {
+      TITLE: 'SQUADHELP',
+      ITEMS: [
         'About',
         'Contact',
         'How It Works?',
@@ -57,8 +114,8 @@ export default {
       ],
     },
     {
-      title: 'RESOURCES',
-      items: [
+      TITLE: 'RESOURCES',
+      ITEMS: [
         'How It Works',
         'Become a Creative',
         'Business Name Generator',
@@ -70,8 +127,8 @@ export default {
       ],
     },
     {
-      title: 'OUR SERVICES',
-      items: [
+      TITLE: 'OUR SERVICES',
+      ITEMS: [
         'Naming',
         'Logo Design',
         'Taglines',
@@ -83,8 +140,8 @@ export default {
       ],
     },
     {
-      title: 'LEGAL',
-      items: [
+      TITLE: 'LEGAL',
+      ITEMS: [
         'Terms of Service',
         'Privacy Policy',
         'Cookie Policy',
