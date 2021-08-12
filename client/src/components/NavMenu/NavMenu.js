@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 //import { connect } from 'react-redux';
 import styles from './NavMenu.module.sass';
 import CONSTANTS from '../../constants';
 
+
 const SubmenuItemsRender = (item)  =>{
-    item.ITEMS.map((item) => 
-        <li key={item}><a href={item.match(/How It Works/) ? "/how-it-works" : "https://google.com"}>{item}
-        </a></li>);
+   return (item.ITEMS.map((i) => 
+        <li key={i}>
+          <a href={i.match(/How It Works/) ? "/how-it-works" : "https://google.com"}>
+            {i}
+         </a>
+        </li>)
+      );
   }
 
 const  MenuItemsRender = (item) => (
@@ -27,12 +32,20 @@ const MenuRender = ()  =>{
 }
 
 
+
 const NavMenu = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const OpeningMobileMenu = () => setIsOpen(!isOpen);
+
     return (
-    <div className={styles.nav}>
+    <div className = {isOpen ? styles.open_mob_menu : styles.closed_mob_menu}>
+        <div className = {styles.menu_icon} onClick={OpeningMobileMenu}>
+        <span> </span>
+        </div>
         <ul>
             {MenuRender()}
-        </ul>
+        </ul>        
     </div>
     );
 }

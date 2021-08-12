@@ -63,7 +63,7 @@ export default {
    {
       TITLE: 'Contests',
       ITEMS: [
-        'How It works',
+        'How It Works',
         'Pricing',
         'Agence Service',
         'Active Contests',
