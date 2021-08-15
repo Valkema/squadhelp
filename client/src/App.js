@@ -41,7 +41,7 @@ class App extends Component {
           <Route exact path="/login" component={OnlyNotAuthorizedUserHoc(LoginPage)} />
           <Route exact path="/registration" component={OnlyNotAuthorizedUserHoc(RegistrationPage)} />
           <Route exact path="/payment" component={PrivateHoc(Payment)} />
-          <Route exact path="/startContest" component={PrivateHoc(StartContestPage)} />
+          <Route exact path="/start-contest" component={PrivateHoc(StartContestPage)} />
           <Route
             exact
             path="/startContest/nameContest"
@@ -67,7 +67,7 @@ class App extends Component {
             })}
           />
           <Route exact path="/dashboard" component={PrivateHoc(Dashboard)} />
-          <Route exact path="/contest/:id" component={PrivateHoc(ContestPage)} />
+          <Route exact path="/contest/:id" component={ContestPage} />
           <Route exact path="/account" component={PrivateHoc(UserProfile)} />
           <Route component={NotFound} />
         </Switch>

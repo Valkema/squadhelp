@@ -21,7 +21,7 @@ class Header extends React.Component {
     };
 
     startContests = () => {
-      this.props.history.push('/startContest');
+      this.props.history.push('/start-contest');
     };
 
     renderLoginButtons = () => {

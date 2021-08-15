@@ -69,7 +69,7 @@ const Home = (props) => {
                     name ideas from world's largest community of naming experts.
                     With 75,000+ creatives and 15,000+ successful naming projects,
                     Squadhelp is by far the largest naming platform across the globe .
-</p>
+                  </p>
                 </div>
                 <div className={styles.card}>
                   <img
@@ -82,7 +82,7 @@ const Home = (props) => {
                     we ensure that you receive more ideas from our top-quality creatives,
                     and Gamification best practices ensure two-way communication throughout your
                     contest.
-</p>
+                  </p>
                 </div>
                 <div className={styles.card}>
                   <img
@@ -95,7 +95,7 @@ const Home = (props) => {
                     demographics to get unbiased feedback on your favorite names.
                     Also receive Trademark support from our team of Licensed Trademark Attorneys,
                     so you can pick your name with confidence.
-</p>
+                  </p>
                 </div>
               </div>
             </div>
@@ -152,7 +152,7 @@ const Home = (props) => {
                     <span>
                         We’ll walk you through exactly what you need to share about your project
                         in order to get an awesome Name
-</span>
+                    </span>
                   </p>
                 </div>
                 <img src={`${CONSTANTS.STATIC_IMAGES_PATH}gif/1-compressed.gif`} alt="compressed" />

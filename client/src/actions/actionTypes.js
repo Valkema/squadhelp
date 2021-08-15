@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 export default {
   AUTH_ACTION_LOGIN: 'AUTH_ACTION_LOGIN',
   AUTH_ACTION_REGISTER: 'AUTH_ACTION_REGISTER',

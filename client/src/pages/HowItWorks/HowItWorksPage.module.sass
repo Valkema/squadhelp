@@ -1,0 +1,141 @@
+$mainFontFamily: "Poppins",Helvetica,Arial,sans-serif
+$mainTextClr: #1e2022
+$infoTextClr: #77838f
+$AccentClr: #377dff
+$secAccentClr: #fff
+$borderClr: #e7eaf3
+$bgAccentClr: rgba(55,125,255,.1)
+
+.wrapper
+ display: flex
+ flex-direction: column
+ justify-content: center
+ margin: 0 auto
+ max-width: 1140px
+ font-family: $mainFontFamily
+ font-size: 1rem
+ font-weight: 400
+ line-height: 1.5
+ color: $mainTextClr
+
+ .pre_title
+   color: $AccentClr
+   padding: 7px 15px
+   font-size: 11px
+   background: $bgAccentClr
+   text-align: center
+   border-radius: 6.1875rem
+   margin: 8px 0
+   box-sizing: border-box
+   cursor: default
+
+ .how_sq_work_container
+  display: flex
+  margin: 80px 0 32px 0
+
+  .how_sq_work_container__info
+    display: flex
+    flex-direction: column
+    padding: 0 15px
+    box-sizing: border-box
+
+    span
+      width: 30%
+    
+    h3
+      margin-bottom: 8px
+      font-size: 2.5rem
+      font-weight: 600
+    
+    p
+      color: $infoTextClr
+      line-height: 1.7
+      margin-bottom: 16px
+    
+    div
+      box-sizing: border-box
+      background-color: $AccentClr
+      border-radius: 6.1875rem
+      color: $secAccentClr
+      width: 155px
+      padding: 12px 16px
+      cursor: pointer
+      transition: all 0.2s ease-in-out
+      text-align: center
+     
+      &:hover
+       transform: translateY(-3px)
+       box-shadow: 0 4px 11px rgba(55, 125, 255, 0.5)
+
+      i
+       margin-right: 0.5rem
+
+ .ways_to_use_container
+   display: flex
+   flex-direction: column
+   justify-content: center
+   padding: 32px 15px
+
+   .ways_to_use_container__title
+      margin-bottom: 64px
+      text-align: center
+
+      h4
+        font-size: 2rem
+        margin: 8px 0
+      
+      p
+        color: $infoTextClr
+
+   .ways_to_use_container__cards
+     display: flex
+     justify-content: space-between
+
+     .card
+       display: flex
+       flex-direction: column
+       align-items: center
+       width: 31.5%
+       padding: 64px 16px
+       border: 1px solid $borderClr
+       text-align: center
+       box-sizing: border-box
+
+       .card__img
+         width: 72px
+         height: 72px
+         overflow: hidden
+         margin-bottom: 8px
+         
+
+         img
+          width: inherit
+          height: inherit
+          object-fit: cover
+
+       .card__title
+        font-size: 24px
+        font-weight: 500
+        margin-bottom: 8px
+
+       .card__desc
+         line-height: 1.7
+         color: $infoTextClr
+         margin-bottom: 25px
+
+       .card__link_btn
+         box-sizing: border-box
+         min-width: 10rem
+         padding: 12px 16px
+         background-color: $AccentClr
+         border-radius: .3125rem
+         cursor: pointer
+         transition: all 0.2s ease-in-out
+
+         &:hover
+          transform: translateY(-3px)
+          box-shadow: 0 4px 11px rgba(55, 125, 255, 0.5)
+
+         .card__link
+           text-decoration: none
+           color: $secAccentClr
