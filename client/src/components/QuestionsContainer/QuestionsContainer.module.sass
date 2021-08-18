@@ -1,0 +1,134 @@
+$mainFont: "Poppins",Helvetica,Arial,sans-serif
+$primaryClr: #fff
+$secondaryClr: #377dff
+$mainTextClr: #1e2022
+$secTextClr: #77838f
+$borderClr: #e7eaf3
+    
+.wrapper
+    max-width: 1140px
+    display: flex
+    justify-content: center
+    padding: 32px 15px
+    box-sizing: border-box
+    margin-bottom: 80px
+    font-family: $mainFont
+    font-size: 1rem
+    font-weight: 400
+    line-height: 1.5
+
+    .info
+     display: flex
+     flex-direction: column
+     box-sizing: border-box
+     padding: 5px 0 5px 5px
+     
+
+
+     .info_wrap
+        display: flex
+        flex-direction: column
+        box-sizing: border-box
+        padding: 64px
+        background-color: $primaryClr
+        color: $mainTextClr
+        box-shadow: 0 10px 40px 10px rgba(140,152,164,.175)
+
+        .info_pay
+            display: flex
+            padding-bottom: 16px
+            box-sizing: border-box
+
+            i
+                display: flex
+                justify-content: center
+                align-items: center
+                min-width: 32px
+                height: 32px
+                font-size: .8175rem
+                color: $secondaryClr
+                cursor: default
+                background: rgba(55,125,255,.1)
+                border-radius: 50%
+                margin-right: 16px
+                box-sizing: border-box
+
+            .info_pay_content
+                display: flex
+                flex-direction: column
+
+                .info_pay_content_title
+                    font-weight: 500
+                    margin-bottom: 4px
+                    font-size: 1.5rem
+                    color: $mainTextClr
+
+                .info_pay_content_descr
+                    font-size: 14px
+                    color: $secTextClr
+                    line-height: 1.7
+                    margin-bottom: 16px
+
+                    a
+                        color: $secondaryClr
+                        text-decoration: none
+
+            &:first-child
+                margin-bottom: 16px
+                border-bottom: 1px solid $borderClr
+
+                .info_pay_content_title
+                    margin-bottom: 8px
+                    font-size: 1.25rem
+    
+    .questions
+        display: flex
+        flex-direction: column
+        padding: 64px
+        box-sizing: border-box
+        background: $secondaryClr
+        color: $primaryClr
+
+        .questions_title
+            font-weight: 300
+            font-size: 2rem
+            margin-bottom: 4px
+        
+        .questions_info
+            font-size: 14px
+            font-weight: 400
+            margin-bottom: 16px
+
+        .questions_btn
+            max-width: 220px
+            background: $primaryClr
+            color: $secondaryClr
+            box-sizing: border-box
+            padding: 12px 16px
+            border-radius: 6.1875rem
+            font-weight: 500
+            cursor: default
+            text-align: center
+            transition: all 0.2s ease-in-out
+            margin-bottom: 25px
+
+            &:hover
+                transform: translateY(-3px)
+                box-shadow: 0 3px 6px 0 rgba(140,152,164,.25)
+        
+        .questions_tel
+            display: flex
+            flex-direction: column
+
+            a
+                text-decoration: none
+                color: $primaryClr
+                font-size: 14px
+                margin-bottom: 8px
+
+                img
+                    margin-right: 5px
+            
+            p
+                font-size: 14px
+                margin-bottom: 16px

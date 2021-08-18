@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
+import StatisticContainer from '../../components/StatisticContainer/StatisticContainer';
+import FeachuredContainer from '../../components/FeachuredContainer/FeachuredContainer';
+import QuestionsContainer from '../../components/QuestionsContainer/QuestionsContainer';
+import FaqList from '../../components/FaqList/FaqList';
 import Footer from '../../components/Footer/Footer';
 import styles from './HowItWorksPage.module.sass';
 import CONSTANTS from '../../constants';
@@ -10,20 +14,22 @@ import listInfo from './listInfo.json';
 
 const HowItWorks = () => {
     const createList = (items) =>
-    items.map((i) => (
-      <li key={i.num}>
-        <span>{i.num}</span>
-        <p>{i.content}</p>
+    items.map((item, ind) => (
+      <li key={item.id}>
+        <div>
+            <span>{`${ind+1}.`}</span>
+            <p>{item.content}</p>            
+        </div>
       </li>
     ));
 
     return (
-    <>
-     <Header/>
+    <> 
      <div className={styles.wrapper}>
+        <Header/>
         <div className={styles.how_sq_work_container}>
             <div className={styles.how_sq_work_container__info}>
-                <span className={styles.pre_title}>World's #1 Naming Platform!</span>
+                <span className={styles.info_accent}>World's #1 Naming Platform!</span>
                 <h3>How Does Squadhelp Work?</h3>
                 <p>Squadhelp helps you come up with a great 
                 name for your business by combining the 
@@ -41,7 +47,7 @@ const HowItWorks = () => {
         </div>
         <div className={styles.ways_to_use_container}>
             <div  className={styles.ways_to_use_container__title}>
-                <span className={styles.pre_title}>Our Services</span>
+                <span>Our Services</span>
                 <h4>3 Ways To Use Squadhelp</h4>
                 <p>Squadhelp offers 3 ways to get you a perfect name for your business.</p>
             </div>
@@ -56,7 +62,7 @@ const HowItWorks = () => {
                     All names are auto-checked for URL availability.
                     </p> 
                     <div className={styles.card__link_btn}>
-                        <Link to='#' className={styles.card__link}>
+                        <Link to='/start-contest' className={styles.card__link}>
                             <span>Launch a contest</span>
                         </Link>
                     </div>
@@ -109,17 +115,21 @@ const HowItWorks = () => {
                 </div>
             </div>
         </div>
+        <FaqList/>
         <div className={styles.get_start_container}>
             <p className={styles.get_start_container__title}>Ready to get started?</p>
             <p>Fill out your contest brief and begin receiving custom name suggestions within minutes.</p>
-            <button>
+            <div>
                 <Link to='/start-contest' className={styles.get_start_container__link}>
                     <span>Start A Contest</span>
                 </Link>
-            </button>
+            </div>
         </div>
+        <StatisticContainer/>
+        <QuestionsContainer/>
+        <FeachuredContainer/>
+        <Footer/>
      </div>
-     <Footer/>
     </>
     );
 };

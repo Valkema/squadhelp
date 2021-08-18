@@ -3,22 +3,12 @@ $mainTextClr: #1e2022
 $infoTextClr: #77838f
 $AccentClr: #377dff
 $secAccentClr: #fff
+$getStartAccentClr: #28D2D0
 $borderClr: #e7eaf3
 $bgAccentClr: rgba(55,125,255,.1)
 
-.wrapper
- display: flex
- flex-direction: column
- justify-content: center
- margin: 0 auto
- max-width: 1140px
- font-family: $mainFontFamily
- font-size: 1rem
- font-weight: 400
- line-height: 1.5
- color: $mainTextClr
 
- .pre_title
+@mixin pre_title
    color: $AccentClr
    padding: 7px 15px
    font-size: 11px
@@ -27,10 +17,32 @@ $bgAccentClr: rgba(55,125,255,.1)
    border-radius: 6.1875rem
    margin: 8px 0
    box-sizing: border-box
-   cursor: default
+   cursor: default 
+
+@mixin icon_container
+   width: 72px
+   height: 72px
+   overflow: hidden
+
+@mixin image
+   width: inherit
+   height: inherit
+   object-fit: cover
+
+.wrapper
+ display: flex
+ flex-direction: column
+ align-items: center
+ margin: 0 auto
+ font-family: $mainFontFamily
+ font-size: 1rem
+ font-weight: 400
+ line-height: 1.5
+ color: $mainTextClr
 
  .how_sq_work_container
   display: flex
+  max-width: 1140px
   margin: 80px 0 32px 0
 
   .how_sq_work_container__info
@@ -39,7 +51,8 @@ $bgAccentClr: rgba(55,125,255,.1)
     padding: 0 15px
     box-sizing: border-box
 
-    span
+    .info_accent
+      @include pre-title
       width: 30%
     
     h3
@@ -72,6 +85,7 @@ $bgAccentClr: rgba(55,125,255,.1)
 
  .ways_to_use_container
    display: flex
+   max-width: 1140px
    flex-direction: column
    justify-content: center
    padding: 32px 15px
@@ -79,6 +93,9 @@ $bgAccentClr: rgba(55,125,255,.1)
    .ways_to_use_container__title
       margin-bottom: 64px
       text-align: center
+
+      span
+        @include pre_title
 
       h4
         font-size: 2rem
@@ -102,16 +119,12 @@ $bgAccentClr: rgba(55,125,255,.1)
        box-sizing: border-box
 
        .card__img
-         width: 72px
-         height: 72px
-         overflow: hidden
+         @include icon_container
          margin-bottom: 8px
          
 
          img
-          width: inherit
-          height: inherit
-          object-fit: cover
+          @include image
 
        .card__title
         font-size: 24px
@@ -139,3 +152,169 @@ $bgAccentClr: rgba(55,125,255,.1)
          .card__link
            text-decoration: none
            color: $secAccentClr
+
+ .naming_contest_container
+   display: flex
+   flex-direction: column
+   align-items: center
+   max-width: 1140px
+   box-sizing: border-box
+   padding: 128px 15px
+   position: relative
+
+   .naming_contest_container__title
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: space-between
+    margin-bottom: 64px
+
+    .title__img
+      @include icon_container
+      margin-bottom: 10px
+
+      img
+       @include image
+
+    h4
+      font-size: 2rem
+      margin-bottom: 8px
+
+   .naming_contest_container__info
+      display: flex
+      flex-direction: row
+      justify-content: space-between
+
+      .info__img
+        display: flex
+        max-width: 50%
+        overflow: hidden
+        padding-right: 30px
+        box-sizing: border-box
+
+        img
+          @include image 
+
+      .info__list
+        max-width: 50%
+        display: flex
+
+        ul
+          list-style: none
+          display: flex
+          flex-direction: column
+          box-sizing: border-box
+          padding: 0 12px
+
+          li
+            display: flex
+            box-sizing: border-box
+            padding: 16px 0 16px 40px
+            position: relative
+
+            div
+              display: flex
+              box-sizing: border-box
+              padding: 32px
+              justify-content: space-between
+              align-items: center
+              border: 1px solid $borderClr
+              border-radius: 0.3125rem
+
+              span
+                margin-right: 16px
+                font-size:  54px
+                color: $AccentClr
+
+              p
+                color: $infoTextClr
+                line-height: 1.7
+
+            &::before
+              position: absolute
+              top: 0
+              bottom: 0
+              right: 0
+              left: -.25rem
+              width: 2rem
+              height: .0625rem
+              border-top: 1px solid $borderClr
+              margin: auto auto auto 0
+              content: ''
+            
+            &::after
+              position: absolute
+              top: 0
+              bottom: 0
+              right: 0
+              left: -.3125rem
+              width: .0625rem
+              height: 100%
+              border-right: 1px solid $borderClr
+              margin: auto auto auto 0
+              content: ''
+
+            &:first-child::after
+              height: 50%
+              top: auto
+
+            &:last-child::after 
+              height: 50%
+              bottom: auto
+
+   &::before
+    position: absolute
+    content: ''
+    border-top: 1px solid $borderClr
+    z-index: 100
+    width: 200%
+    top: 0
+
+    &::before
+    position: absolute
+    content: ''
+    border-bottom: 1px solid $borderClr
+    z-index: 100
+    width: 200%
+    bottom: 0
+
+ .get_start_container
+   width: 100%
+   display: flex
+   flex-direction: column
+   align-items: center
+   background-image: linear-gradient(30deg,rgba(45,21,130,0.9) 0%,rgba(25,160,255,0.85) 100%)
+   box-sizing: border-box
+   padding: 32px 0
+
+   .get_start_container__title
+     color: $getStartAccentClr
+     font-size: 2rem
+     margin-bottom: 8px
+     font-weight: 600
+
+   p
+    font-size: 1.25rem
+    font-weight: 300
+    color: $secAccentClr
+    margin-bottom: 16px
+   
+   div
+    background-color: $secAccentClr
+    min-width: 10rem
+    padding: 12px 16px
+    box-sizing: border-box
+    border-radius: .3125rem
+    cursor: pointer
+    transition: all 0.2s ease-in-out
+    text-align: center
+
+    .get_start_container__link
+      color: $mainTextClr
+      text-decoration: none
+      font-weight: 500
+
+    &:hover
+      transform: translateY(-3px)
+      box-shadow: 0 4px 11px rgba(255, 255, 255, 0.35)
+  

@@ -8,23 +8,35 @@ import Logo from '../../components/Logo/Logo';
 import NavMenu from '../../components/NavMenu/NavMenu';
 
 class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {isReading: false};
+  }
+ 
+
   componentDidMount() {
     if (!this.props.data) {
       this.props.getUser();
     }
   }
+  
+  closeAnnouncement = () => {
+    this.setState(
+      {isReading: true}
+    );
+  }
 
-    logOut = () => {
+  logOut = () => {
       localStorage.clear();
       this.props.clearUserStore();
       this.props.history.replace('/login');
-    };
+  };
 
-    startContests = () => {
+  startContests = () => {
       this.props.history.push('/start-contest');
-    };
+  };
 
-    renderLoginButtons = () => {
+  renderLoginButtons = () => {
       if (this.props.data) {
         return (
           <>
@@ -52,15 +64,14 @@ class Header extends React.Component {
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    to="http:/www.google.com"
-                    style={{ textDecoration: 'none' }}
-                  >
+                  <Link to="http:/www.google.com" style={{ textDecoration: 'none' }}>
                     <span>Messages</span>
                   </Link>
                 </li>
                 <li>
-                  <Link to="http:/www.google.com" style={{ textDecoration: 'none' }}><span>Affiliate Dashboard</span></Link>
+                  <Link to="http:/www.google.com" style={{ textDecoration: 'none' }}>
+                    <span>Affiliate Dashboard</span>
+                  </Link>
                 </li>
                 <li><span onClick={this.logOut}>Logout</span></li>
               </ul>
@@ -88,9 +99,12 @@ class Header extends React.Component {
       }
       return (
         <div className={styles.headerContainer}>
-          <div className={styles.announcementHeader}>
-            <span className={styles.info}>Squadhelp recognized as one of the Most Innovative Companies by Inc Magazine.</span>
-            <a href="http://www.google.com" target="_blank" rel="noreferrer">Read Announcement</a>
+          <div className={this.state.isReading ? styles.announcementHeader_closing : styles.announcementHeader}>
+            <div className={styles.info}>
+              <span className={styles.info_text}>Squadhelp recognized as one of the Most Innovative Companies by Inc Magazine.</span>
+              <a href="http://www.google.com" target="_blank" rel="noreferrer">Read Announcement</a>              
+            </div>
+            <i class="fas fa-times" onClick = {this.closeAnnouncement}></i>
           </div>
           <div className={styles.loginSignUpHeaders}>
             <div className={styles.telContainer}>

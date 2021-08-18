@@ -1,0 +1,63 @@
+$mainClr: #fff
+$accentClr: #377dff
+$linkClr: rgba(255,255,255,.7)
+$listBorderClr: #e5e7eb
+    
+.wrapper
+    max-width: 1140px
+    display: flex
+    justify-content: space-between
+    padding: 0 15px
+    box-sizing: border-box
+
+    .menu_container
+        padding: 0px 15px
+        box-sizing: border-box
+        position: relative
+
+        .menu
+            background: $accentClr
+            position: sticky
+            top: 60px
+            list-style: none
+            padding: 16px 32px
+            box-sizing: border-box
+            cursor: default
+            border-radius: .3125rem
+            margin: 64px 0
+
+            li
+                font-size:  .875rem
+                padding: 16px 0
+                box-sizing: border-box
+                cursor: pointer
+
+                .menu_link
+                    color: $linkClr
+                    text-decoration: none
+                    white-space: nowrap
+
+                    &:hover
+                      color: $mainClr
+
+    .list_container
+        display: flex
+        flex-direction: column
+        align-items: center
+        max-width: 75%
+        padding: 0px 15px
+        box-sizing: border-box
+        cursor: default
+
+        .list
+            width: 100%
+            display: flex
+            flex-direction: column
+
+            .list_item
+                padding: 64px 0
+                box-sizing: border-box
+                border-bottom: 1px solid $listBorderClr
+                    
+                &:last-child
+                    border-bottom: none

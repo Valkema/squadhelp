@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
-//import { connect } from 'react-redux';
 import styles from './NavMenu.module.sass';
 import CONSTANTS from '../../constants';
 
 
 const SubmenuItemsRender = (item)  =>{
-   return (item.ITEMS.map((i) => 
-        <li key={i}>
-          <a href={i.match(/How It Works/) ? "/how-it-works" : "https://google.com"}>
-            {i}
+   return (item.ITEMS.map((item, index) => 
+        <li key={index}>
+          <a href={item.match(/How It Works/) ? "/how-it-works" : "https://google.com"}>
+            {item}
          </a>
         </li>)
       );

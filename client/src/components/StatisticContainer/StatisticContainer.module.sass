@@ -1,0 +1,58 @@
+.wrapper
+  display: flex
+  justify-content: space-between
+  max-width: 1140px
+  padding: 64px 15px
+  box-sizing: border-box
+  font-family: "Poppins", Helvetica, Arial, sans-serif
+  position: relative
+
+  .card
+    display: flex
+    flex-direction: column
+    align-items: center
+    width: 30%
+    box-sizing: border-box
+    padding: 0 40px
+
+    .card_img
+        width: 80px
+        height: 80px
+        overflow: hidden
+        margin-bottom: 20px
+
+        img
+          width: inherit
+          height: inherit
+
+    
+    p
+        color: #77838f
+        line-height: 1.7
+        font-size: 1rem
+        font-weight: 400
+        text-align: center
+
+        span
+         font-weight: 600
+         color: #1e2022
+
+        &:last-child::after
+            position: absolute
+            right: 65%
+            top: 50%
+            height: 4rem
+            border-left: 1px solid rgba(30,32,34,.1)
+            content: ''
+            margin-top: -2rem
+            transform: rotate(15deg)
+        
+        &:last-child::before
+            position: absolute
+            right: 35%
+            top: 50%
+            height: 4rem
+            border-left: 1px solid rgba(30,32,34,.1)
+            content: ''
+            margin-top: -2rem
+            transform: rotate(15deg)

@@ -4,6 +4,9 @@ import { connect } from 'react-redux';
 import Header from '../../components/Header/Header';
 import CONSTANTS from '../../constants';
 import SlideBar from '../../components/SlideBar/SlideBar';
+import StatisticContainer from '../../components/StatisticContainer/StatisticContainer';
+import FeachuredContainer from '../../components/FeachuredContainer/FeachuredContainer';
+import QuestionsContainer from '../../components/QuestionsContainer/QuestionsContainer';
 import Footer from '../../components/Footer/Footer';
 import styles from './Home.module.sass';
 import carouselConstants from '../../carouselConstants';
@@ -100,43 +103,8 @@ const Home = (props) => {
               </div>
             </div>
             <div className={styles.greyContainer}>
-              <div className={styles.adv}>
-                <div className={styles.adv_images}>
-                  <img src={`${CONSTANTS.STATIC_IMAGES_PATH}sponsors/Forbes-inactive.png`} alt="forbes" />
-                  <img src={`${CONSTANTS.STATIC_IMAGES_PATH}sponsors/Forbes-active.png`} alt="forbes" />
-                </div>
-                <div className={styles.adv_images}>
-                  <img
-                    src={`${CONSTANTS.STATIC_IMAGES_PATH}sponsors/the_next_web_inactive.png`}
-                    alt="web"
-                  />
-                  <img src={`${CONSTANTS.STATIC_IMAGES_PATH}sponsors/the_next_web_active.png`} alt="web" />
-                </div>
-                <div className={styles.adv_images}>
-                  <img
-                    src={`${CONSTANTS.STATIC_IMAGES_PATH}sponsors/mashable-inactive.png`}
-                    alt="mashable"
-                  />
-                  <img
-                    src={`${CONSTANTS.STATIC_IMAGES_PATH}sponsors/mashable-active.png`}
-                    alt="mashable"
-                  />
-                </div>
-              </div>
-              <div className={styles.stats}>
-                <div>
-                  <p>119,525</p>
-                  <span>Creatives</span>
-                </div>
-                <div>
-                  <p>21,875</p>
-                  <span>Customers</span>
-                </div>
-                <div>
-                  <p>85</p>
-                  <span>Industries</span>
-                </div>
-              </div>
+              <StatisticContainer/>
+              <FeachuredContainer/>
             </div>
             <h2>How Do Name Contest Work?</h2>
             <div className={styles.whiteContainer}>
@@ -197,11 +165,12 @@ const Home = (props) => {
             <div className={styles.startContestContainer}>
               <span>Ready to get started? Launch a contest and start receiving submissions instantly.
               </span>
-              <Link to="/start-contest">
+              <Link to="/start-contest" className={styles.startContestLink}>
               <i className="far fa-lightbulb"/>
               <span>Start a Contest</span>
               </Link>
             </div>
+            <QuestionsContainer/>
             <div className={styles.headerBar}>
               <h3>Names For Sale</h3>
               <p className={styles.blueUnderline}>

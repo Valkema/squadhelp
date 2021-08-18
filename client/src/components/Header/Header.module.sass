@@ -177,32 +177,58 @@ $announceLinkColor: #ffffe0
 
           &:hover
            color: $navAccentColor
-      
+  
+  .announcementHeader_closing
+    display: none
+    
   .announcementHeader
     z-index: 500
     display: flex
-    justify-content: center
+    justify-content: space-between
     align-items: center
     width: 100%
     position: fixed
     background-color: $announceBgColor
     border-bottom: 3px solid $primaryColor
     height: 30px
-
-    .info
-      font-size: 10px
-      letter-spacing: 0.3px
-      color: $primaryColor
-      margin-right: 4px
-      @media(max-width: 600px)
+    @media(max-width: 600px)
         display: none
 
-    a
-      font-size: 10px
-      letter-spacing: 0.3px
-      color: $announceLinkColor
-      text-decoration: none
+    .info_closing
+      display: none
+
+    .info
+      display: flex
+      justify-content: center
+      align-items: center
+      width: 95%
+      margin-left: 20px
+      
+      .info_text
+        display: flex
+        justify-content: center
+        align-items: center
+        font-size: 10px
+        letter-spacing: 0.3px
+        color: $primaryColor
+        
+      a
+        font-size: 10px
+        letter-spacing: 0.3px
+        color: $announceLinkColor
+        text-decoration: none
+
+        &:hover
+          text-decoration: underline
+    
+    i
+      font-size: 14px
+      color: $primaryColor
+      cursor: pointer
+      margin-right: 15px
+
 
       &:hover
-       text-decoration: underline
-
+        color: $announceLinkColor
+        
+        
