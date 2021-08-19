@@ -1,18 +1,23 @@
-import React from 'react';
+import React, { useState }   from 'react';
 import styles from './FaqListItem.module.sass';
 
 const FaqList = (props) => {
     const {data} = props;
 
-    const submenuRender = (arr) => {
+    const [activeId, setActiveId] = useState('');
+
+
+    const submenuItemsRender = (arr) => {
         return (
         arr.map((i) => 
-            <li key={i.id} className={styles.item_container}>
+            <li key={i.id}  
+            className = {i.id === activeId ? styles.active_item : styles.non_active_item}
+            onClick = {() => { activeId === i.id ? setActiveId('') : setActiveId(i.id)}} >
                 <div className={styles.subtitle_container}>
                     <p className={styles.subtitle}>{i.subtitle}</p>
-                    <i class="fas fa-arrow-right"></i>                   
+                    <i className="fas fa-arrow-right"></i>                   
                 </div>
-                <p className={styles.submenu_info}>
+                <div className={styles.submenu_info}>
                    <span >{i.info.txt1}</span>
                    {i.info.link ? <a href={i.info.link.path}>{i.info.link.name}</a> : ''}
                    {i.info.txt2 ? <span>{i.info.txt2}</span> : ''}
@@ -28,14 +33,14 @@ const FaqList = (props) => {
                         )
                        )}
                     </ul>}
-                </p>
+                </div>
             </li>
         ));}
     
     return (
     <>
         <h6>{data.title}</h6>
-        <ul className={styles.item}>{submenuRender(data.content)}</ul>
+        <ul className={styles.item}>{submenuItemsRender(data.content)}</ul>
     </>
     );
 }

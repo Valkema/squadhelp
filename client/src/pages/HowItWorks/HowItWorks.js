@@ -37,7 +37,7 @@ const HowItWorks = () => {
                 technology and Agency-level validation services.
                 </p>
                 <div>
-                    <i class="fa fa-play" aria-hidden="true"/>
+                    <i className="fa fa-play" aria-hidden="true"/>
                     <span>Play Video</span>
                 </div>
             </div>

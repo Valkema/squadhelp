@@ -12,46 +12,90 @@ h6
 .item
     display: flex
     flex-direction: column
-    color: $textClr
 
-    .item_container
+    .non_active_item
         margin-bottom: 16px
         font-weight: 400
+        color: $textClr
+        cursor: default
 
-    .subtitle_container
-        display: flex
-        align-items: center
-        justify-content: space-between
-        box-sizing: border-box
-        padding: 16px
-        border: 1px solid $borderClr
-        border-radius: .3125rem
-        transition: all 0.2s ease-in-out
-
-        i
-           color: $accentClr
-           transition: all 0.2s ease-in-out
-
-        &:hover
-            color: $accentClr
-            background-color: $bgClr
-
-    .submenu_info
-        cursor: auto
-        box-sizing: border-box
-        padding: 16px
-        border: 1px solid $borderClr
-        border-radius: .3125rem
-        transition: all 0.2s ease-in-out
-
-        a
-            text-decoration: none
-            color: $accentClr
+        .subtitle_container
+            display: flex
+            align-items: center
+            justify-content: space-between
+            box-sizing: border-box
+            padding: 16px
+            border: 1px solid $borderClr
+            border-radius: .3125rem
+            transition: all 0.2s ease-in-out
+            overflow: hidden
+            
+            i
+                color: $accentClr
+                transition: all 0.2s ease-in-out
+            
 
             &:hover
-                cursor: pointer
-        
-        ul
-            list-style-type: disc
-            padding-left: 40px
+                color: $accentClr
+                background-color: $bgClr
+
+        .submenu_info
+            visibility: hidden
+            height: 0
+            opacity: 0
+            cursor: auto
             box-sizing: border-box
+            border: 1px solid $borderClr
+            border-radius: .3125rem
+            transition: all 0.2s ease-in-out
+
+    
+
+    .active_item
+        margin-bottom: 16px
+        font-weight: 400
+        color: $textClr
+
+        .subtitle_container
+            display: flex
+            align-items: center
+            justify-content: space-between
+            box-sizing: border-box
+            padding: 16px
+            border: 1px solid $borderClr
+            border-radius: .3125rem
+            transition: all 0.2s ease-in-out
+            overflow: hidden
+
+            i
+                color: $accentClr
+                transition: all 0.2s ease-in-out
+                transform: rotate(90deg)
+
+            &:hover
+                color: $accentClr
+                background-color: $bgClr
+
+
+        .submenu_info
+            height: auto
+            opacity: 1
+            cursor: auto
+            box-sizing: border-box
+            padding: 16px
+            border: 1px solid $borderClr
+            border-radius: .3125rem
+            transition: all 0.2s ease-in-out
+            
+
+            a
+                text-decoration: none
+                color: $accentClr
+
+                &:hover
+                    cursor: pointer
+            
+            ul
+                list-style-type: disc
+                padding-left: 40px
+                box-sizing: border-box

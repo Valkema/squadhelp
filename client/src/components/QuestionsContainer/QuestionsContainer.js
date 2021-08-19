@@ -11,7 +11,7 @@ const QuestionsContainer = () => {
             <div className={styles.info}>
                 <div className={styles.info_wrap}>
                     <div className={styles.info_pay}>
-                        <i class="fas fa-angle-right"></i>
+                        <i className ="fas fa-angle-right"></i>
                         <div className={styles.info_pay_content}>
                             <p className={styles.info_pay_content_title}>Pay a Fraction of cost vs hiring an agency</p>
                             <p className={styles.info_pay_content_descr}>For as low as $199, our naming contests and marketplace
@@ -19,7 +19,7 @@ const QuestionsContainer = () => {
                         </div>
                     </div>
                     <div className={styles.info_pay}>
-                        <i class="fas fa-angle-right"></i>
+                        <i className ="fas fa-angle-right"></i>
                         <div className={styles.info_pay_content}>
                             <p className={styles.info_pay_content_title}>Satisfaction Guarantee</p>
                             <p className={styles.info_pay_content_descr}>Of course! We have policies in place to ensure that you

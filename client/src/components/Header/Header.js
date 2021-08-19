@@ -104,7 +104,7 @@ class Header extends React.Component {
               <span className={styles.info_text}>Squadhelp recognized as one of the Most Innovative Companies by Inc Magazine.</span>
               <a href="http://www.google.com" target="_blank" rel="noreferrer">Read Announcement</a>              
             </div>
-            <i class="fas fa-times" onClick = {this.closeAnnouncement}></i>
+            <i className ="fas fa-times" onClick = {this.closeAnnouncement}></i>
           </div>
           <div className={styles.loginSignUpHeaders}>
             <div className={styles.telContainer}>
