@@ -6,6 +6,7 @@ $secAccentClr: #fff
 $getStartAccentClr: #28D2D0
 $borderClr: #e7eaf3
 $bgAccentClr: rgba(55,125,255,.1)
+$bgVideoClr: #000000d5
 
 
 @mixin pre_title
@@ -39,21 +40,97 @@ $bgAccentClr: rgba(55,125,255,.1)
  font-weight: 400
  line-height: 1.5
  color: $mainTextClr
+ position: relative
+ overflow: hidden
+
+ .closing_video
+    display: block
+    position: absolute
+    opacity: 0
+    visibility: hidden
+    top: 0
+    left: 0
+    width: 100%
+    height: 100vh
+    background-color: $bgVideoClr
+    margin: 0
+    padding: 0
+    overflow: hidden
+    box-sizing: border-box
+    z-index: 1000
+    transition: opacity 0.7s preserve-3d
+
+  
+ .showing_video
+    display: flex
+    justify-content: center
+    align-items: center
+    position: fixed
+    opacity: 1
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-color: $bgVideoClr
+    margin: 0
+    padding: 0
+    overflow: hidden
+    box-sizing: border-box
+    z-index: 1000
+    transition: opacity 0.07s preserve-3d
+
+    .video_frame
+      position: relative
+
+    .close_btn
+      position: absolute
+      color: $borderClr
+      font-size: 20px
+      left: 95%
+      top: 10%
+      cursor: pointer
+      width: 50px
+      text-align: center
+      box-sizing: border-box
+      @media(max-width: 1200px)
+        top: 10%
+        left: 90%
+      @media(max-width: 480px)
+        top: 20%
+        left: 85%
+
+      &:hover
+        background-color: $mainTextClr
+        color: $secAccentClr
+
 
  .how_sq_work_container
   display: flex
   max-width: 1140px
   margin: 80px 0 32px 0
+  justify-content: center
 
   .how_sq_work_container__info
     display: flex
     flex-direction: column
     padding: 0 15px
     box-sizing: border-box
+    width: 65%
+    @media(max-width: 991px)
+      width: 90%
 
     .info_accent
       @include pre-title
       width: 30%
+      white-space: nowrap
+      @media(max-width: 768px)
+        width: 40%
+      @media(max-width: 576px)
+        width: 50%
+      @media(max-width: 480px)
+        width: 65%
+      @media(max-width: 480px)
+        width: 80%
     
     h3
       margin-bottom: 8px
@@ -75,6 +152,8 @@ $bgAccentClr: rgba(55,125,255,.1)
       cursor: pointer
       transition: all 0.2s ease-in-out
       text-align: center
+      @media(max-width: 480px)
+        width: 100%
      
       &:hover
        transform: translateY(-3px)
@@ -82,6 +161,16 @@ $bgAccentClr: rgba(55,125,255,.1)
 
       i
        margin-right: 0.5rem
+  
+  .how_sq_work_container__img
+    width: 35%
+    object-fit: cover
+    @media(max-width: 991px)
+      display: none
+
+    img
+      width: 100%
+
 
  .ways_to_use_container
    display: flex
@@ -93,6 +182,9 @@ $bgAccentClr: rgba(55,125,255,.1)
    .ways_to_use_container__title
       margin-bottom: 64px
       text-align: center
+      @media(max-width: 768px)
+        width: 90%
+        align-self: center
 
       span
         @include pre_title
@@ -104,9 +196,14 @@ $bgAccentClr: rgba(55,125,255,.1)
       p
         color: $infoTextClr
 
+
    .ways_to_use_container__cards
      display: flex
      justify-content: space-between
+     @media(max-width: 768px)
+       flex-direction: column
+       width: 90%
+       align-self: center
 
      .card
        display: flex
@@ -117,6 +214,9 @@ $bgAccentClr: rgba(55,125,255,.1)
        border: 1px solid $borderClr
        text-align: center
        box-sizing: border-box
+       @media(max-width: 768px)
+         width: 100%
+         margin-bottom: 20px
 
        .card__img
          @include icon_container
@@ -144,6 +244,9 @@ $bgAccentClr: rgba(55,125,255,.1)
          border-radius: .3125rem
          cursor: pointer
          transition: all 0.2s ease-in-out
+         @media(max-width: 480px)
+           width: 100%
+           font-size: 0.85rem
 
          &:hover
           transform: translateY(-3px)
@@ -161,6 +264,9 @@ $bgAccentClr: rgba(55,125,255,.1)
    box-sizing: border-box
    padding: 128px 15px
    position: relative
+   @media(max-width: 576px)
+     padding: 50px 15px
+     text-align: center
 
    .naming_contest_container__title
     display: flex
@@ -168,6 +274,10 @@ $bgAccentClr: rgba(55,125,255,.1)
     align-items: center
     justify-content: space-between
     margin-bottom: 64px
+    @media(max-width: 768px)
+      margin-bottom: 30px
+    @media(max-width: 576px)
+      margin-bottom: 10px
 
     .title__img
       @include icon_container
@@ -184,20 +294,33 @@ $bgAccentClr: rgba(55,125,255,.1)
       display: flex
       flex-direction: row
       justify-content: space-between
+      @media(max-width: 991px)
+        flex-direction: column-reverse
 
       .info__img
         display: flex
+        align-items: center
         max-width: 50%
         overflow: hidden
         padding-right: 30px
         box-sizing: border-box
-
+        object-fit: cover
+        @media(max-width: 1200px)
+          width: 50%
+        @media(max-width: 991px)
+          width: 80%
+          align-self: center
         img
-          @include image 
+          width: 100%
+
 
       .info__list
-        max-width: 50%
+        width: 50%
         display: flex
+        @media(max-width: 991px)
+          width: 95%
+        @media(max-width: 480px)
+          width: 100%
 
         ul
           list-style: none
@@ -205,12 +328,16 @@ $bgAccentClr: rgba(55,125,255,.1)
           flex-direction: column
           box-sizing: border-box
           padding: 0 12px
+          @media(max-width: 991px)
+            width: 100%
 
           li
             display: flex
             box-sizing: border-box
             padding: 16px 0 16px 40px
             position: relative
+            @media(max-width: 991px)
+              width: 100%
 
             div
               display: flex
@@ -220,6 +347,9 @@ $bgAccentClr: rgba(55,125,255,.1)
               align-items: center
               border: 1px solid $borderClr
               border-radius: 0.3125rem
+              @media(max-width: 991px)
+                width: 100%
+                justify-content: flex-start
 
               span
                 margin-right: 16px
@@ -229,6 +359,8 @@ $bgAccentClr: rgba(55,125,255,.1)
               p
                 color: $infoTextClr
                 line-height: 1.7
+                @media(max-width: 480px)
+                  text-align: left
 
             &::before
               position: absolute
@@ -298,6 +430,10 @@ $bgAccentClr: rgba(55,125,255,.1)
     font-weight: 300
     color: $secAccentClr
     margin-bottom: 16px
+    @media(max-width: 991px)
+      text-align: center
+    @media(max-width: 480px)
+      font-size: 1rem
    
    div
     background-color: $secAccentClr
@@ -308,6 +444,8 @@ $bgAccentClr: rgba(55,125,255,.1)
     cursor: pointer
     transition: all 0.2s ease-in-out
     text-align: center
+    @media(max-width: 480px)
+      width: 90%
 
     .get_start_container__link
       color: $mainTextClr

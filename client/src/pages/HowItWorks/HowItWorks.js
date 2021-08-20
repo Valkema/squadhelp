@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import StatisticContainer from '../../components/StatisticContainer/StatisticContainer';
@@ -13,6 +13,15 @@ import listInfo from './listInfo.json';
 
 
 const HowItWorks = () => {
+    
+    const [isPlaying, setIsPlaying] = useState(false);
+
+    useEffect(() => {
+        const body = document.querySelector('body');
+        body.style.overflow = isPlaying ? 'hidden' : 'auto';
+    }, [isPlaying]);
+
+
     const createList = (items) =>
     items.map((item, ind) => (
       <li key={item.id}>
@@ -23,10 +32,28 @@ const HowItWorks = () => {
       </li>
     ));
 
+
     return (
     <> 
      <div className={styles.wrapper}>
         <Header/>
+        <div className={isPlaying ? styles.showing_video : styles.closing_video}
+            onClick = {() => setIsPlaying(false)}>
+            <div className={styles.close_btn} title="Close">
+                <i className ="fas fa-times" onClick = {() => setIsPlaying(false)}></i>
+            </div>
+            <iframe
+            className = {styles.video_frame}
+            title="video"
+            frameBorder="1" 
+            autoPlay="1"
+            width="80%"
+            height="50%"
+            allowautoplay = "true"
+            allowFullScreen
+            src="https://fast.wistia.net/embed/iframe/vfxvect60o" 
+            scrolling="no"/>
+        </div>
         <div className={styles.how_sq_work_container}>
             <div className={styles.how_sq_work_container__info}>
                 <span className={styles.info_accent}>World's #1 Naming Platform!</span>
@@ -36,7 +63,7 @@ const HowItWorks = () => {
                 power of crowdsourcing with sophisticated 
                 technology and Agency-level validation services.
                 </p>
-                <div>
+                <div onClick={() => setIsPlaying(true)}>
                     <i className="fa fa-play" aria-hidden="true"/>
                     <span>Play Video</span>
                 </div>

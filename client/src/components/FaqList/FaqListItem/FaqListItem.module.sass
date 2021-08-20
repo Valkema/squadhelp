@@ -12,12 +12,16 @@ h6
 .item
     display: flex
     flex-direction: column
+    @media(max-width: 991px)
+        width: 100%
 
     .non_active_item
         margin-bottom: 16px
         font-weight: 400
         color: $textClr
         cursor: default
+        @media(max-width: 991px)
+            width: 100%
 
         .subtitle_container
             display: flex
@@ -29,10 +33,12 @@ h6
             border-radius: .3125rem
             transition: all 0.2s ease-in-out
             overflow: hidden
+            @media(max-width: 991px)
+                width: 100%
             
             i
                 color: $accentClr
-                transition: all 0.2s ease-in-out
+                transition: all 0.3s ease
             
 
             &:hover
@@ -48,6 +54,20 @@ h6
             border: 1px solid $borderClr
             border-radius: .3125rem
             transition: all 0.2s ease-in-out
+            
+            a
+                text-decoration: none
+                color: $accentClr
+
+                &:hover
+                    cursor: pointer
+            
+            ul
+                list-style-type: disc
+                padding-left: 40px
+                box-sizing: border-box
+            
+
 
     
 
@@ -55,6 +75,8 @@ h6
         margin-bottom: 16px
         font-weight: 400
         color: $textClr
+        @media(max-width: 991px)
+            width: 100%
 
         .subtitle_container
             display: flex
@@ -66,10 +88,12 @@ h6
             border-radius: .3125rem
             transition: all 0.2s ease-in-out
             overflow: hidden
+            @media(max-width: 991px)
+                width: 100%
 
             i
                 color: $accentClr
-                transition: all 0.2s ease-in-out
+                transition: all 0.3s ease
                 transform: rotate(90deg)
 
             &:hover

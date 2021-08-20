@@ -9,11 +9,17 @@ $listBorderClr: #e5e7eb
     justify-content: space-between
     padding: 0 15px
     box-sizing: border-box
+    @media(max-width: 991px)
+        flex-direction: column
+        align-items: center
 
     .menu_container
         padding: 0px 15px
         box-sizing: border-box
         position: relative
+        @media(max-width: 991px)
+            display: flex
+            width: 100%
 
         .menu
             background: $accentClr
@@ -25,6 +31,14 @@ $listBorderClr: #e5e7eb
             cursor: default
             border-radius: .3125rem
             margin: 64px 0
+            @media(max-width: 991px)
+                position: relative
+                width: 100%
+                display: block
+                top: 30px
+                margin: 20px 0
+
+
 
             li
                 font-size:  .875rem
@@ -44,20 +58,29 @@ $listBorderClr: #e5e7eb
         display: flex
         flex-direction: column
         align-items: center
-        max-width: 75%
+        width: 75%
         padding: 0px 15px
         box-sizing: border-box
         cursor: default
+        @media(max-width: 991px)
+            width: 100%
+            align-items: flex-start
 
         .list
             width: 100%
             display: flex
             flex-direction: column
+            @media(max-width: 991px)
+                width: 100%
 
             .list_item
                 padding: 64px 0
                 box-sizing: border-box
                 border-bottom: 1px solid $listBorderClr
+                @media(max-width: 991px)
+                    width: 100%
+                @media(max-width: 576px)
+                    padding: 20px 0
                     
                 &:last-child
                     border-bottom: none

@@ -6,6 +6,11 @@
   box-sizing: border-box
   font-family: "Poppins", Helvetica, Arial, sans-serif
   position: relative
+  @media(max-width: 768px)
+    width: 100%
+    flex-direction: column
+    align-items: center
+    padding: 40px 15px
 
   .card
     display: flex
@@ -14,6 +19,9 @@
     width: 30%
     box-sizing: border-box
     padding: 0 40px
+    @media(max-width: 768px)
+      width: 100%
+      margin-bottom: 25px
 
     .card_img
         width: 80px
@@ -46,6 +54,8 @@
             content: ''
             margin-top: -2rem
             transform: rotate(15deg)
+            @media(max-width: 768px)
+              display: none
         
         &:last-child::before
             position: absolute
@@ -56,3 +66,5 @@
             content: ''
             margin-top: -2rem
             transform: rotate(15deg)
+            @media(max-width: 768px)
+              display: none
