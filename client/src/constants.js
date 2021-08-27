@@ -1,8 +1,7 @@
-/* eslint-disable import/no-anonymous-default-export */
 const env = process.env.NODE_ENV || 'development';
 const serverIP = 'localhost';
 const serverPort = 3000;
-export default {
+const CONSTANTS = {
   INCOME: 'INCOME',
   EXPENSE: 'EXPENSE',
   CUSTOMER: 'customer',
@@ -149,3 +148,5 @@ export default {
     },
   ],
 };
+
+export default CONSTANTS;

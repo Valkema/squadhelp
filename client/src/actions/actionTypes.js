@@ -1,5 +1,4 @@
-/* eslint-disable import/no-anonymous-default-export */
-export default {
+const actionTypes = {
   AUTH_ACTION_LOGIN: 'AUTH_ACTION_LOGIN',
   AUTH_ACTION_REGISTER: 'AUTH_ACTION_REGISTER',
   AUTH_ACTION_REQUEST: 'AUTH_ACTION_REQUEST',
@@ -131,3 +130,5 @@ export default {
   CLEAR_CHAT_ERROR: 'CLEAR_CHAT_ERROR',
   CHANGE_SHOW_MODAL: 'CHANGE_SHOW_MODAL',
 };
+
+export default actionTypes;
