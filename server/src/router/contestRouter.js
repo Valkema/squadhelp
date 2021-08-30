@@ -1,3 +1,4 @@
+/*
 const { Router } = require('express');
 const basicMiddlewares = require('../middlewares/basicMiddlewares');
 const contestController = require('../controllers/contestController');
@@ -21,3 +22,4 @@ contestRouter.put(
   contestController.updateContest
 );
 module.exports = contestRouter;
+*/

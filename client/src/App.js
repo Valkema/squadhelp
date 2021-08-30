@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+//import BrowserHistory from './browserHistory';
 import { ToastContainer } from 'react-toastify';
 import LoginPage from './pages/LoginPage/LoginPage';
 import RegistrationPage from './pages/RegistrationPage/RegistrationPage';
@@ -20,9 +21,12 @@ import ChatContainer from './components/Chat/ChatComponents/ChatContainer/ChatCo
 //import TransactionPage from './pages/TransactionPage/TransactionPage';
 
 class App extends Component {
+
   render() {
+  const {history} = this.props;
+
     return (
-      <Router >
+      <Router>
         <ToastContainer
           position="top-center"
           autoClose={5000}
@@ -35,13 +39,14 @@ class App extends Component {
           pauseOnHover
         />
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/how-it-works" component={HowItWorks} />
-          <Route exact path="/login" component={OnlyNotAuthorizedUserHoc(LoginPage)} />
-          <Route exact path="/registration" component={OnlyNotAuthorizedUserHoc(RegistrationPage)} />
-          <Route exact path="/payment" component={PrivateHoc(Payment)} />
-          <Route exact path="/start-contest" component={PrivateHoc(StartContestPage)} />
+          <Route history={history} exact path="/" component={Home} />
+          <Route history={history} exact path="/how-it-works" component={HowItWorks} />
+          <Route history={history} exact path="/login" component={OnlyNotAuthorizedUserHoc(LoginPage)} />
+          <Route history={history} exact path="/registration" component={OnlyNotAuthorizedUserHoc(RegistrationPage)} />
+          <Route history={history} exact path="/payment" component={PrivateHoc(Payment)} />
+          <Route history={history} exact path="/start-contest" component={PrivateHoc(StartContestPage)} />
           <Route
+            history={history}
             exact
             path="/startContest/nameContest"
             component={PrivateHoc(ContestCreationPage, {
@@ -50,6 +55,7 @@ class App extends Component {
             })}
           />
           <Route
+            history={history}
             exact
             path="/startContest/taglineContest"
             component={PrivateHoc(ContestCreationPage, {
@@ -58,6 +64,7 @@ class App extends Component {
             })}
           />
           <Route
+            history={history}
             exact
             path="/startContest/logoContest"
             component={PrivateHoc(ContestCreationPage, {
@@ -65,13 +72,13 @@ class App extends Component {
               title: 'LOGO',
             })}
           />
-          <Route exact path="/dashboard" component={PrivateHoc(Dashboard)} />
-          <Route exact path="/contest/:id" component={ContestPage} />
-          <Route exact path="/account" component={PrivateHoc(UserProfile)} />
-          <Route component={NotFound} />
+          <Route history={history} exact path="/dashboard" component={PrivateHoc(Dashboard)} />
+          <Route history={history} exact path="/contest/:id" component={ContestPage} />
+          <Route history={history} exact path="/account" component={PrivateHoc(UserProfile)} />
+          <Route history={history} component={NotFound} />
         </Switch>
         <ChatContainer />
-      </Router>
+    </Router>
     );
   }
 }
