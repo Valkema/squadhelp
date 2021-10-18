@@ -39,7 +39,7 @@ class CreatorDashboard extends React.Component {
     renderIndustryType = () => {
       const array = [];
       const { creatorFilter } = this.props;
-      const { industry } = this.props.dataForContest.data;
+      const { industry } = [];
       array.push(<option key={0} value={null}>Choose industry</option>);
       industry.forEach((industry, i) => array.push(<option key={i + 1} value={industry}>{industry}</option>));
       return (
@@ -56,7 +56,7 @@ class CreatorDashboard extends React.Component {
       );
     };
 
-    componentWillReceiveProps(nextProps, nextContext) {
+    componentWillReceiveProps(nextProps) {
       if (nextProps.location.search !== this.props.location.search) {
         this.parseUrlForParams(nextProps.location.search);
       }
@@ -66,6 +66,10 @@ class CreatorDashboard extends React.Component {
       this.props.getDataForContest();
       if (this.parseUrlForParams(this.props.location.search) && !this.props.contests.length) this.getContests(this.props.creatorFilter);
     }
+
+    // componentWillUnmount() {
+    //   this.props.clearContestsList();
+    // }
 
     getContests = (filter) => {
       this.props.getContests({

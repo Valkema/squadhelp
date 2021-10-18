@@ -49,6 +49,7 @@ exports.createSession = async (userInstance) => {
     tokenPair: refreshToken.token,
   };
 };
+
 exports.refreshSession = async (refreshTokenInstance) => {
   const userInstance = await refreshTokenInstance.getUser();
   const { accessToken, refreshToken } = await createTokenPair(userInstance);

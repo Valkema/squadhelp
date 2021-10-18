@@ -1,0 +1,68 @@
+$primaryColor: #77838f
+$secondaryColor: #fff
+$accentColor: #2cb9b7
+$borderColor: #e7eaf3
+
+.wrapper
+    width: 100%
+
+.card
+    padding: 16px
+    box-sizing: border-box
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    align-items: center
+    word-wrap: break-word
+    border: 1px solid $borderColor
+    border-radius: .3125rem
+    transition: all 0.2s ease-in-out
+
+    &:hover
+        cursor: pointer
+
+    &__choice
+        text-align: center
+        background-color: $primaryColor
+        color: $secondaryColor
+        font-size: 12px
+        font-weight: 500
+        line-height: 1
+        padding: 7px 15px
+        border-radius: 10rem
+        margin-bottom: 5px
+
+    &__title
+        font-size: 12px
+        text-align: center
+
+.card__active
+    padding: 16px
+    box-sizing: border-box
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    align-items: center
+    word-wrap: break-word
+    border: 3px solid $accentColor
+    border-radius: .3125rem
+    transition: all 0.2s ease-in-out
+
+    &:hover
+        cursor: pointer
+
+.card__active .card__choice
+    text-align: center
+    background-color: $accentColor
+    color: $secondaryColor
+    font-size: 12px
+    font-weight: 500
+    line-height: 1
+    padding: 7px 15px
+    border-radius: 10rem
+    margin-bottom: 5px
+
+.card__active .card___title
+    font-size: 12px
+    text-align: center
+

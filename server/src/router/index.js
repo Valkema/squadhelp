@@ -9,11 +9,11 @@ const validators = require('../middlewares/validators');
 const chatController = require('../controllers/chatController');
 const upload = require('../utils/fileUpload');
 const router = express.Router();
-const contestRouter = require('./contestRouter');
+//const contestRouter = require('./contestRouter');
 //const authRouter = require('./authRouter');
 //const validateBody = require('../middlewares/validateBody');
 //const ValidationSchemas = require('../validationSchemes');
-const AuthController = require('../controllers/authController');
+//const AuthController = require('../controllers/authController');
 
 router.use(checkToken.checkAuth);
 router.use(checkToken.checkToken);
@@ -44,7 +44,7 @@ router.post(
 
 router.post('/login', validators.validateLogin, userController.login);
 
-router.post('/getUser', checkToken.checkAuth);
+router.get('/getUser', checkToken.checkAuth);
 
 
 

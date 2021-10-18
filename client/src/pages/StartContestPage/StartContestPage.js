@@ -110,7 +110,8 @@ const StartContestPage = (props) => {
 };
 
 const mapStateToProps = (state) => {
-  const { bundleStore, userStore } = state;
+  const { bundleStore } = state.bundleStore;
+  const { userStore } = state.userStore;
   return { bundleStore, userStore };
 };
 

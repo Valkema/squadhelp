@@ -1,4 +1,3 @@
-'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface
@@ -39,16 +38,16 @@ module.exports = {
           defaultValue: Sequelize.NOW,
         },
       })
-      .then(() =>
-        queryInterface.addConstraint('Transactions', ['sum'], {
-          type: 'check',
-          where: {
-            sum: {
-              [Sequelize.Op.gte]: 0,
-            },
-          },
-        }),
-      );
+      // .then(() =>
+      //   queryInterface.addConstraint('Transactions', ['sum'], {
+      //     type: 'check',
+      //     where: {
+      //       sum: {
+      //         [Sequelize.Op.gte]: 0,
+      //       },
+      //     },
+      //   }),
+      // );
   },
   down: (queryInterface, Sequelize) => {
     return queryInterface.dropTable('Transactions');
